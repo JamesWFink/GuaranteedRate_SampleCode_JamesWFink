@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+	function addRecord()
+	{
+		document.getElementById("status").innerHTML = "";
+
+		var data =
+		{
+			LastName:document.getElementById('LastName').value,
+			FirstName:document.getElementById('FirstName').value,
+			Gender:document.getElementById('Gender').value,
+			FavoriteColor:document.getElementById('FavoriteColor').value,
+			DateOfBirth:document.getElementById('DateOfBirth').value
+		};
+
+		$.ajax(
+		{
+			url: '@Url.Action("AddRecord", "Home")',
+			type: "POST",
+			content: "application/json; charset=utf-8",
+			datatype: "json",
+			cache: false,
+			data: data,
+			success: function (result) { document.getElementById("status").innerHTML = result; }
+		});
+	}
+
+	function getData()
+	{
+		$.ajax(
+		{
+			url: '@Url.Action("GetData", "Home")',
+			type: "GET",
+			content: "application/json; charset=utf-8",
+			datatype: "json",
+			cache: false,
+			data: { SortMethod:document.getElementById("sortMethod").value },
+			success: function (response)
+			{
+				var arr = JSON.parse(response);
+				var i;
+				var out = "<table border='1'><tr><th>Last Name</th><th>First Name</th><th>Gender</th><th>Favorite Color</th><th>Date Of Birth</th></tr>";
+				for (i = 0; i < arr.peoples.length; i++)
+				{
+					out += "<tr><td>" +
+					arr.peoples[i].LastName +
+					"</td><td>" +
+					arr.peoples[i].FirstName +
+					"</td><td>" +
+					arr.peoples[i].Gender +
+					"</td><td>" +
+					arr.peoples[i].FavoriteColor +
+					"</td><td>" +
+					arr.peoples[i].DateOfBirth +
+					"</td></tr>";
+				}
+				out += "</table>";
+				document.getElementById("people_list").innerHTML = out;
+			}
+		});
+	}
+</script>
+
+<div class="row">
+	<h1>Personnel Data</h1>
+
+	<input id="LastName" autofocus="autofocus" type="text" name="LastName"> LastName)<br>
+	<input id="FirstName" type="text" name="FirstName"> FirstName)<br>
+	<input id="Gender" type="text" name="Gender"> Gender (M/F))<br>
+	<input id="FavoriteColor" type="text" name="FavoriteColor"> FavoriteColor)<br>
+	<input id="DateOfBirth" type="text" name="DateOfBirth"> DateOfBirth (MM/DD/YYYY))<br>
+	<button id="submitRecord" onclick="addRecord()">Add Record</button>
+	<br><p id="status"></p><br>
+
+	<h4>Select a sort method.</h4>
+	<select id="sortMethod">
+		<option value="Gender">Sort By Gender</option>
+		<option value="BirthDate">Sort By Birth Date</option>
+		<option value="LastName">Sort By Last Name</option>
+	</select>
+	<button onclick="getData()">Submit</button>
+</div>
+
+<br>
+<div type="table" id="people_list"></div>

@@ -1,0 +1,10 @@
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\PersonelData.Tests.dll.config
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\PersonelData.Tests.dll
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\PersonelData.Tests.pdb
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\PersonnelData.exe
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\WebDriver.dll
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\PersonnelData.pdb
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\bin\Debug\WebDriver.xml
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\obj\Debug\PersonelData.Tests.csprojResolveAssemblyReference.cache
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\obj\Debug\PersonelData.Tests.dll
+E:\Jim\Code\Guaranteed Rate\PersonelData.Tests\obj\Debug\PersonelData.Tests.pdb

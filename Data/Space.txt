@@ -1,0 +1,6 @@
+Jones Tom Male Blue 04/13/1967
+Smith Dick Male Black 12/19/1971
+Walker Harry Male Red 04/13/1971
+Johnson Mary Female Green 04/26/1971
+King Amy Female Yellow 02/09/1982
+MacDonald Jennifer Female Brown 08/14/1986
